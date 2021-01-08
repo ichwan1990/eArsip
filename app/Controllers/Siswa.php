@@ -37,11 +37,16 @@ class Siswa extends Controller
                     'errors' => [
                         'required' => '{field} tidak boleh kosong.',
                         'numeric' => '{field} hanya boleh angka.',
+                        'max_length' => '{field} maksimal 10 karakter.',
+                        'is_unique' => '{field} tidak boleh sama.'
                     ]
                 ],
                 'nama' => [
                     'label' => 'Nama Siswa',
-                    'rules' => 'required'
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong.'
+                    ]
                 ]
             ]);
 
@@ -69,11 +74,11 @@ class Siswa extends Controller
 
                 if ($success) {
                     session()->setFlashdata('message', 'Ditambahkan');
-                    return redirect()->to(base_url('siswa'));
+                    return redirect()->to(base_url('/siswa'));
                 }
             }
         } else {
-            return redirect()->to(base_url('siswa'));
+            return redirect()->to(base_url('/siswa'));
         }
     }
 }
