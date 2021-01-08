@@ -81,4 +81,15 @@ class Siswa extends Controller
             return redirect()->to(base_url('/siswa'));
         }
     }
+
+    public function hapus()
+    {
+        $id = $this->request->getPost('idSiswa');
+        $success = $this->model->hapus($id);
+
+        if ($success) {
+            session()->setFlashdata('message', 'Dihapus!');
+            return redirect()->to(base_url('/siswa'));
+        }
+    }
 }

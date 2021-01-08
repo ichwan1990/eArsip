@@ -48,6 +48,12 @@
             <!-- Custom scripts for all pages-->
             <script src="/assets/js/sb-admin-2.min.js"></script>
 
+            <!-- Script Hapus Data-->
+            <script>
+                $(document).on('click', '#btn-hapus', function() {
+                    $('.modal-body #idSiswa').val($(this).data('id'));
+                })
+            </script>
             </body>
 
             </html>

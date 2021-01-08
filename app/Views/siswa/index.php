@@ -11,13 +11,12 @@
         </div>
     <?php endif; ?>
 
-
     <div class="row">
         <div class="col-md-12">
             <?php
             if (session()->get('err')) {
                 echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>" . session()->get('err') . "
-                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <button type='button' class='close btn-sm' data-dismiss='alert' aria-label='Close'>
                         <span aria-hidden='true'>&times;</span>
                         </button>
                     </div>";
@@ -42,6 +41,7 @@
                         <th>NO</th>
                         <th>NISN</th>
                         <th>NAMA</th>
+                        <th>Opsi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,6 +51,11 @@
                             <td scope="row"><?= $i; ?></td>
                             <td><?= $row['nisn']; ?></td>
                             <td><?= $row['nama']; ?></td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#modalHapus" id="btn-hapus" class="btn btn-sm btn-danger" data-id="<?= $row['id']; ?>">
+                                    <i class="fa fa-trash-alt"></i>
+                                </button>
+                            </td>
                         </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>
@@ -70,7 +75,7 @@
 <!-- End of Main Content -->
 
 
-<!-- Modal -->
+<!-- Modal Tambah -->
 <div class="modal fade" id="modalTambah">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -97,5 +102,24 @@
             </div>
         </div>
         </form>
+    </div>
+</div>
+
+
+<!-- Modal Hapus -->
+<div class="modal fade" id="modalHapus">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="/siswa/hapus" method="post">
+                <div class="modal-body">
+                    Apakah anda yakin ingin menghapus data ini?
+                    <input type="hidden" id="idSiswa" name="idSiswa">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Yakin</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
