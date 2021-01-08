@@ -15,4 +15,9 @@ class M_Siswa extends Model
     {
         return $this->db->table('siswa')->get();
     }
+
+    public function tambah($data)
+    {
+        return $this->db->table('siswa')->insert($data);
+    }
 }

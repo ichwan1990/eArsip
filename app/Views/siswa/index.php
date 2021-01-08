@@ -3,10 +3,14 @@
 
     <h1 class="h3 my-3 text-gray-800"><?= $judul; ?></h1>
     <div class="card">
-        <div class="card-body">
-            <!-- Page Heading -->
+        <div class="card-header">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">
+                <i class="fa  fa-plus"> Tambah Data</i>
+            </button>
 
-            <a name="" id="" class="btn btn-primary my-3" href="#" role="button">Tambah Data</a>
+        </div>
+        <div class="card-body">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -28,6 +32,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="card-footer text-muted">
+
+        </div>
     </div>
 
 
@@ -36,3 +43,34 @@
 
 </div>
 <!-- End of Main Content -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalTambah">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah <?= $judul; ?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('siswa/tambah'); ?> " method="post">
+                    <div class="form-group mb-0">
+                        <label for="nisn"></label>
+                        <input type="text" name="nisn" id="nisn" class="form-control" placeholder="Masukkan NISN">
+                    </div>
+                    <div class="form-group mb-0">
+                        <label for="nama"></label>
+                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukkan Nama Siswa">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Tambah Data</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
