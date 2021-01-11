@@ -39,6 +39,7 @@
             </div>
 
             <!-- Bootstrap core JavaScript-->
+            <script src="/assets/vendor/jquery/jquery-3.4.1.min.js"></script>
             <script src="/assets/vendor/jquery/jquery.min.js"></script>
             <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -52,16 +53,8 @@
             <script src="/assets/vendor/datatables/jquery.dataTables.min.js"></script>
             <script src="/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-            <!-- Script Hapus Data-->
-            <script>
-                $(document).on('click', '#btn-hapus', function() {
-                    $('.modal-body #idSiswa').val($(this).data('id'));
-                })
-
-                $(document).ready(function() {
-                    $('#datatables').DataTable();
-                });
-            </script>
+            <!-- Custom Script -->
+            <script src="/assets/js/script.js"></script>
             </body>
 
             </html>
