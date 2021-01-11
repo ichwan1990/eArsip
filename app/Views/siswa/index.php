@@ -29,19 +29,19 @@
     <div class="card">
         <div class="card-header">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalTambah">
                 <i class="fa  fa-plus"> Tambah Data</i>
             </button>
 
         </div>
         <div class="card-body">
-            <table class="table table-striped">
+            <table class="table table-bordered" id="datatables">
                 <thead>
-                    <tr>
-                        <th>NO</th>
+                    <tr class="text-center">
+                        <th>#</th>
                         <th>NISN</th>
                         <th>NAMA</th>
-                        <th>Opsi</th>
+                        <th><i class="fa fa-cog"></i></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +51,10 @@
                             <td scope="row"><?= $i; ?></td>
                             <td><?= $row['nisn']; ?></td>
                             <td><?= $row['nama']; ?></td>
-                            <td>
+                            <td class="text-center">
+                                <button type="button" data-toggle="modal" data-target="#modalHapus" id="btn-hapus" class="btn btn-sm btn-success" data-id="<?= $row['id']; ?>">
+                                    <i class="fa fa-pencil-alt"></i>
+                                </button>
                                 <button type="button" data-toggle="modal" data-target="#modalHapus" id="btn-hapus" class="btn btn-sm btn-danger" data-id="<?= $row['id']; ?>">
                                     <i class="fa fa-trash-alt"></i>
                                 </button>
