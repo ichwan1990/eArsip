@@ -2,8 +2,8 @@
 function tampilan($halaman, $data = [])
 {
     echo view('template/v_header', $data);
-    echo view('template/v_sidebar');
-    echo view('template/v_topbar');
+    echo view('template/v_sidebar', $data);
+    echo view('template/v_topbar', $data);
     echo view($halaman, $data);
-    echo view('template/v_footer');
+    echo view('template/v_footer', $data);
 }
