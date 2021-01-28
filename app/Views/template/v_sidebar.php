@@ -29,9 +29,16 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= base_url('siswa'); ?>">
+        <a class="nav-link collapsed" href="/siswa">
             <i class="fas fa-fw fa-cog"></i>
             <span>Data Siswa</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/suratmasuk">
+            <i class="fas fa-fw fa-envelope"></i>
+            <span>Surat Masuk</span>
         </a>
     </li>
 
